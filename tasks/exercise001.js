@@ -7,7 +7,11 @@
 
 function singles(arr){
     if (arr === undefined) throw new Error("array is required");
-    // Your code here!
+    const newarr = arr.filter((item, index) => arr.indexOf(item) != index);
+    const finalarr = arr.filter(item => !newarr.includes(item));
+    if (finalarr.length == 0) return 0;
+    const sum = finalarr.reduce((a, b) => a + b);
+    return sum;
 }
 
 module.exports = {
