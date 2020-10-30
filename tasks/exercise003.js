@@ -23,6 +23,32 @@
 
 function rowWeights(array){
     // Your code here!
+    var team1 = [];
+    var team2 = [];
+    var team1weight = 0;
+    var team2weight = 0;
+
+    array.forEach((item, index) => {
+        if (index % 2 == 0) {
+            team1.push(item);
+        } else {
+            team2.push(item);
+        }
+    });
+    
+    if (team1.length > 0) {
+        team1weight = team1.reduce((a, b) => a + b);
+    } else {
+        team1weight.push = 0;
+    }
+
+    if (team2.length > 0) {
+        team2weight = team2.reduce((a, b) => a + b);
+    } else {
+        team2weight = 0;
+    }
+    
+    return ([team1weight, team2weight]);
 }
 
 module.exports = {
